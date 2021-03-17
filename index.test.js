@@ -74,22 +74,46 @@ describe("[Exercise 5] Seasons", () => {
     seasons = new utils.Seasons(); // each test must start with fresh seasons
   });
   it('[9] the FIRST call of seasons.next returns "summer"', () => {
-    // ✨ test away
+    const expected = "summer";
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
   it('[10] the SECOND call of seasons.next returns "fall"', () => {
-    // ✨ test away
+    const expected = "fall";
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
   it('[11] the THIRD call of seasons.next returns "winter"', () => {
-    // ✨ test away
+    const expected = "winter";
+    seasons.next();
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
   it('[12] the FOURTH call of seasons.next returns "spring"', () => {
-    // ✨ test away
+    const expected = "spring";
+    for (let i = 0; i < 3; i++) {
+      seasons.next();
+    }
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
   it('[13] the FIFTH call of seasons.next returns again "summer"', () => {
-    // ✨ test away
+    const expected = "summer";
+    for (let i = 0; i < 4; i++) {
+      seasons.next();
+    }
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
   it('[14] the 40th call of seasons.next returns "spring"', () => {
-    // ✨ test away
+    const expected = "spring";
+    for (let i = 0; i < 39; i++) {
+      seasons.next();
+    }
+    const actual = seasons.next();
+    expect(actual).toBe(expected);
   });
 });
 

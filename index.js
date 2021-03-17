@@ -82,6 +82,8 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.currentIndex = 0;
+    this.seasonArr = ["spring", "summer", "fall", "winter"];
   }
 
   /**
@@ -97,7 +99,13 @@ class Seasons {
    * seasons.next() // returns "summer"
    */
   next() {
-    // ✨ implement
+    if (this.currentIndex >= this.seasonArr.length - 1) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex += 1;
+    }
+
+    return this.seasonArr[this.currentIndex];
   }
 }
 
