@@ -123,16 +123,27 @@ describe("[Exercise 6] Car", () => {
     focus = new utils.Car("focus", 20, 30); // each test must start with a fresh car
   });
   it("[15] driving the car returns the updated odometer", () => {
-    // ✨ test away
+    const expected = 100;
+    const actual = focus.drive("100");
+    expect(actual).toEqual(expected);
   });
   it("[16] driving the car uses gas", () => {
-    // ✨ test away
+    const expected = 0;
+    focus.drive("700");
+    const actual = focus.tank;
+    expect(actual).toEqual(expected);
   });
   it("[17] refueling allows to keep driving", () => {
-    // ✨ test away
+    const expected = 30;
+    focus.drive("700");
+    const actual = focus.refuel(1);
+    expect(actual).toEqual(expected);
   });
   it("[18] adding fuel to a full tank has no effect", () => {
-    // ✨ test away
+    const expected = 600;
+    focus.drive("700");
+    const actual = focus.refuel(99);
+    expect(actual).toEqual(expected);
   });
 });
 
