@@ -1,7 +1,7 @@
 const utils = require("./index");
 
 describe("[Exercise 1] trimProperties", () => {
-  it.only("[1] returns an object with the properties trimmed", () => {
+  it("[1] returns an object with the properties trimmed", () => {
     // EXAMPLE
     const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
     const expected = { foo: "foo", bar: "bar", baz: "baz" };
@@ -9,7 +9,10 @@ describe("[Exercise 1] trimProperties", () => {
     expect(actual).toEqual(expected);
   });
   it("[2] returns a copy, leaving the original object intact", () => {
-    // ✨ test away
+    const input = { foo: "  foo ", bar: "bar ", baz: " baz" };
+
+    const actual = utils.trimProperties(input);
+    expect(actual).not.toEqual(input);
   });
 });
 
